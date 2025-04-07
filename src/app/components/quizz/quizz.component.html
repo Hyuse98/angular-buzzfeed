@@ -1,28 +1,134 @@
 <div class="quizz__container">
+  <!-- Tela inicial -->
+  <div *ngIf="!quizStarted" class="quizz__intro" [@fadeInOut]>
+    <div class="quizz_logo">
+      <img src="assets/imgs/logo.png" alt="Quiz Logo">
+      <h1>{{title}}</h1>
+      <p class="quizz__description">{{description}}</p>
+    </div>
 
-  <div class="quizz_logo">
-    <img src="assets/imgs/logo.png" alt="" srcset="">
-    <h3>{{title}}</h3>
-  </div>
+    <div class="quizz__settings">
+      <div class="timer-toggle">
+        <label class="toggle">
+          <input type="checkbox" [checked]="showTimer" (change)="toggleTimer()">
+          <span class="slider"></span>
+          <span class="toggle-label">Timer {{showTimer ? 'Ativado' : 'Desativado'}}</span>
+        </label>
+      </div>
+    </div>
 
-  <div *ngIf=!finished class="quizz_questions">
-      <h3>{{questionSelected.question}}</h3>
-  </div>
-
-  <div *ngIf=!finished class="quizz_options">
-
-    <button
-      *ngFor="let option of questionSelected.options; let i = index"
-      (click)="playerChoose(option.alias)"
-      class="btn-option"
-    >
-      {{option.name}}
+    <button class="btn-start" (click)="startQuiz()">
+      <span>Começar Quiz</span>
+      <i class="fas fa-play"></i>
     </button>
-
   </div>
 
-  <div *ngIf=finished class="quizz_results">
-    <h1>O Seu resultado é:</h1>
-    <p>{{answerSelected}}</p>
+  <!-- Container de perguntas -->
+  <div *ngIf="quizStarted && !finished" class="quiz__active" [@fadeInOut]>
+    <!-- Cabeçalho com progresso -->
+    <div class="quizz__header">
+      <div class="quizz__progress-container">
+        <div class="quizz__progress-bar">
+          <div class="quizz__progress" [style.width.%]="progressPercentage"></div>
+        </div>
+        <div class="quizz__progress-text">
+          Questão {{questionIndex + 1}} de {{questionMaxIndex}}
+        </div>
+      </div>
+
+      <!-- Timer (se ativado) -->
+      <div *ngIf="showTimer" class="quizz__timer-container">
+        <div class="quizz__timer-bar">
+          <div class="quizz__timer" [style.width]="getTimerWidth()" [style.background-color]="getTimerColor()"></div>
+        </div>
+        <div class="quizz__timer-text">
+          {{timeLeft}} segundos
+        </div>
+      </div>
+    </div>
+
+    <!-- Questão atual -->
+    <div class="quizz_question-card" [@fadeInOut]>
+      <!-- Imagem da questão (se houver) -->
+      <div *ngIf="questionSelected.image" class="quizz__question-image">
+        <img [src]="questionSelected.image" [alt]="questionSelected.question">
+      </div>
+
+      <!-- Texto da pergunta -->
+      <div class="quizz_questions">
+        <h3>{{questionSelected.question}}</h3>
+      </div>
+
+      <!-- Opções de resposta -->
+      <div class="quizz_options">
+        <button
+          *ngFor="let option of questionSelected.options; let i = index"
+          (click)="playerChoose(option.alias, option.value || 1, i)"
+          class="btn-option"
+          [class.selected]="selectedOptionIndex === i"
+          [@fadeInOut]
+        >
+          <div class="option-content">
+            <img *ngIf="option.image" [src]="option.image" [alt]="option.name" class="option-image">
+            <span class="option-text">{{option.name}}</span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tela de resultado -->
+  <div *ngIf="finished" class="quizz_results" [@fadeInOut]>
+    <h1>Seu resultado é:</h1>
+
+    <div class="result-card">
+      <h2 class="result-title">{{answerSelected.title}}</h2>
+
+      <div *ngIf="resultImageUrl" class="result-image">
+        <img [src]="resultImageUrl" [alt]="answerSelected.title">
+      </div>
+
+      <div class="result-description">
+        <p>{{answerSelected.description}}</p>
+      </div>
+
+      <div *ngIf="answerSelected.secondaryTrait" class="secondary-trait">
+        <p>Você também tem características de: <strong>{{answerSelected.secondaryTrait}}</strong></p>
+      </div>
+
+      <div class="result-powers">
+        <h3>Superpoderes:</h3>
+        <ul>
+          <li *ngFor="let power of answerSelected.powers">{{power}}</li>
+        </ul>
+      </div>
+
+      <div class="result-weakness">
+        <h3>Fraquezas:</h3>
+        <ul>
+          <li *ngFor="let weakness of answerSelected.weaknesses">{{weakness}}</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="share-container">
+      <h3>Compartilhe seu resultado:</h3>
+      <div class="share-buttons">
+        <button class="share-btn twitter" (click)="shareOnSocialMedia('twitter')">
+          <i class="fab fa-twitter"></i>
+        </button>
+        <button class="share-btn facebook" (click)="shareOnSocialMedia('facebook')">
+          <i class="fab fa-facebook-f"></i>
+        </button>
+        <button class="share-btn whatsapp" (click)="shareOnSocialMedia('whatsapp')">
+          <i class="fab fa-whatsapp"></i>
+        </button>
+      </div>
+    </div>
+
+    <button class="btn-restart" (click)="restartQuiz()">
+      <span>Refazer Quiz</span>
+      <i class="fas fa-redo"></i>
+    </button>
   </div>
 </div>
