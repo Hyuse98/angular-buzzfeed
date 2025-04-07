@@ -1,55 +1,189 @@
 {
-  "title":"Você seria um heroi ou vilão ?",
-  "questions":[
+  "title": "Qual Super-Ser Você Seria?",
+  "description": "Descubra se você seria um herói, vilão, anti-herói ou vigilante baseado em suas escolhas e personalidade! Responda honestamente para obter o resultado mais preciso.",
+  "questions": [
     {
-      "id":1,
-      "question": "Qual super poder você escolheria ?",
-      "options":[
-        {"id": 1, "name":"Raios-Lasers", "alias":"A"},
-        {"id": 2, "name":"Voar", "alias":"B"},
-        {"id": 3, "name":"Explodir coisas", "alias":"A"},
-        {"id": 4, "name":"Curar feridas", "alias":"B"},
-        {"id": 5, "name":"Soltar fogo pelas mãos", "alias":"A"}
+      "id": 1,
+      "question": "Qual superpoder você escolheria primeiro?",
+      "image": "assets/imgs/questions/superpowers.png",
+      "options": [
+        {"id": 1, "name": "Controle Mental", "alias": "A", "value": 3, "image": "assets/imgs/options/mind-control.jpg"},
+        {"id": 2, "name": "Voar", "alias": "B", "value": 2, "image": "assets/imgs/options/flying.jpg"},
+        {"id": 3, "name": "Super Força", "alias": "D", "value": 2, "image": "assets/imgs/options/strength.jpg"},
+        {"id": 4, "name": "Cura e Regeneração", "alias": "B", "value": 3, "image": "assets/imgs/options/healing.jpg"},
+        {"id": 5, "name": "Invisibilidade", "alias": "C", "value": 2, "image": "assets/imgs/options/invisibility.jpg"}
       ]
     },
     {
-      "id":2,
-      "question": "Quem você salvaria primeiro ?",
-      "options":[
-        {"id": 1, "name":"Crianças", "alias":"A"},
-        {"id": 2, "name":"Idosos", "alias":"A"},
-        {"id": 3, "name":"Não saberia escolher", "alias":"B"}
+      "id": 2,
+      "question": "O que você faria primeiro se ganhasse seus poderes?",
+      "image": "assets/imgs/questions/first-action.jpg",
+      "options": [
+        {"id": 1, "name": "Usaria para ficar rico", "alias": "A", "value": 2},
+        {"id": 2, "name": "Ajudaria pessoas necessitadas", "alias": "B", "value": 3},
+        {"id": 3, "name": "Resolveria problemas pessoais", "alias": "C", "value": 2},
+        {"id": 4, "name": "Buscaria justiça contra criminosos", "alias": "D", "value": 3}
       ]
     },
     {
-      "id":3,
-      "question": "Qual a sua maior preocupação ao enfretar outro super ser ?",
-      "options":[
-        {"id": 1, "name":"Não destruir prédios", "alias":"B"},
-        {"id": 2, "name":"Socar a cara do inimigo", "alias":"A"},
-        {"id": 3, "name":"Não sujar meu traje", "alias":"A"},
-        {"id": 4, "name":"Não deixar ninguém se ferir", "alias":"B"}
+      "id": 3,
+      "question": "Qual a sua opinião sobre regras e leis?",
+      "image": "assets/imgs/questions/laws.jpg",
+      "options": [
+        {"id": 1, "name": "São necessárias, mas podem ser contornadas quando conveniente", "alias": "C", "value": 3},
+        {"id": 2, "name": "Devem ser seguidas sempre, sem exceções", "alias": "B", "value": 3},
+        {"id": 3, "name": "São limitações criadas pelos fracos", "alias": "A", "value": 3},
+        {"id": 4, "name": "São importantes, mas há exceções quando a justiça está em jogo", "alias": "D", "value": 3}
       ]
     },
     {
-      "id":4,
-      "question": "Qual o seu maior foco ?",
-      "options":[
-        {"id": 1, "name":"Ficar rico com poderes", "alias":"A"},
-        {"id": 2, "name":"Salvar a cidade", "alias":"B"}
+      "id": 4,
+      "question": "Como você lidaria com um inimigo derrotado?",
+      "image": "assets/imgs/questions/defeated-enemy.jpg",
+      "options": [
+        {"id": 1, "name": "Entregaria às autoridades", "alias": "B", "value": 3},
+        {"id": 2, "name": "Faria justiça com as próprias mãos", "alias": "D", "value": 3},
+        {"id": 3, "name": "Daria uma segunda chance, dependendo das circunstâncias", "alias": "C", "value": 2},
+        {"id": 4, "name": "Eliminaria para que não cause mais problemas", "alias": "A", "value": 3}
       ]
     },
     {
-      "id":5,
-      "question": "Qual o seu apelido de super ser ?",
-      "options":[
-        {"id": 1, "name":"O Terrivel", "alias":"A"},
-        {"id": 2, "name":"Amigo da vizinhança", "alias":"B"}
+      "id": 5,
+      "question": "Qual motivação te impulsionaria mais?",
+      "image": "assets/imgs/questions/motivation.jpg",
+      "options": [
+        {"id": 1, "name": "Vingança por um trauma do passado", "alias": "D", "value": 2},
+        {"id": 2, "name": "Desejo de criar um mundo melhor", "alias": "B", "value": 3},
+        {"id": 3, "name": "Reconhecimento e admiração", "alias": "C", "value": 2},
+        {"id": 4, "name": "Poder e controle", "alias": "A", "value": 3}
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Como você prefere trabalhar?",
+      "image": "assets/imgs/questions/teamwork.jpg",
+      "options": [
+        {"id": 1, "name": "Sozinho, sem interferências", "alias": "D", "value": 2},
+        {"id": 2, "name": "Em equipe, com outros super-seres", "alias": "B", "value": 2},
+        {"id": 3, "name": "Com um pequeno grupo de confiança", "alias": "C", "value": 2},
+        {"id": 4, "name": "Com subordinados seguindo minhas ordens", "alias": "A", "value": 2}
+      ]
+    },
+    {
+      "id": 7,
+      "question": "O que você acha mais importante em um conflito?",
+      "image": "assets/imgs/questions/conflict.jpg",
+      "options": [
+        {"id": 1, "name": "Vencer a qualquer custo", "alias": "A", "value": 2},
+        {"id": 2, "name": "Minimizar danos colaterais", "alias": "B", "value": 3},
+        {"id": 3, "name": "Alcançar seus objetivos pessoais", "alias": "C", "value": 2},
+        {"id": 4, "name": "Garantir que a justiça seja feita", "alias": "D", "value": 3}
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Como você reagiria se seus entes queridos estivessem em perigo?",
+      "image": "assets/imgs/questions/loved-ones.jpg",
+      "options": [
+        {"id": 1, "name": "Faria qualquer coisa para protegê-los, mesmo quebrando regras", "alias": "D", "value": 2},
+        {"id": 2, "name": "Buscaria ajuda e seguiria um plano seguro", "alias": "B", "value": 2},
+        {"id": 3, "name": "Negociaria com os responsáveis", "alias": "C", "value": 2},
+        {"id": 4, "name": "Usaria o evento como oportunidade para mostrar poder", "alias": "A", "value": 3}
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Qual seria sua identidade preferida?",
+      "image": "assets/imgs/questions/identity.jpg",
+      "options": [
+        {"id": 1, "name": "Uma figura pública, conhecida por todos", "alias": "A", "value": 1},
+        {"id": 2, "name": "Um símbolo de esperança, com identidade secreta", "alias": "B", "value": 2},
+        {"id": 3, "name": "Alguém no meio termo, conhecido apenas por alguns", "alias": "C", "value": 2},
+        {"id": 4, "name": "Uma lenda urbana, que poucos sabem se realmente existe", "alias": "D", "value": 2}
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Que tipo de traje você usaria?",
+      "image": "assets/imgs/questions/costume.jpg",
+      "options": [
+        {"id": 1, "name": "Algo imponente e intimidador", "alias": "A", "value": 1},
+        {"id": 2, "name": "Cores vibrantes e inspiradoras", "alias": "B", "value": 1},
+        {"id": 3, "name": "Roupas normais, sem chamar atenção", "alias": "C", "value": 2},
+        {"id": 4, "name": "Algo escuro e funcional para se misturar às sombras", "alias": "D", "value": 2}
       ]
     }
   ],
-  "results":{
-    "A": "Você muito provavelmente seria um super vilão!",
-    "B": "Você muito provavelmente seria um super Herói!"
+  "results": {
+    "A": {
+      "title": "Super Vilão",
+      "description": "Você é um Super Vilão! Com uma mente brilhante e ambição sem limites, você não se importa em quebrar regras ou causar destruição para alcançar seus objetivos. Para você, o poder é tudo e acredita que um mundo sob seu controle seria melhor. Sua inteligência e frieza fazem de você um adversário formidável para qualquer herói.",
+      "powers": [
+        "Manipulação e persuasão",
+        "Inteligência estratégica",
+        "Ausência de remorso",
+        "Pensamento fora da caixa"
+      ],
+      "weaknesses": [
+        "Excesso de confiança",
+        "Dificuldade em confiar nos outros",
+        "Tendência à autodestruição",
+        "Pode subestimar oponentes"
+      ]
+    },
+    "B": {
+      "title": "Super Herói",
+      "description": "Você é um Super Herói! Com um forte senso de justiça e compaixão, você está sempre disposto a ajudar os outros, mesmo que isso signifique se sacrificar. Suas escolhas mostram que você valoriza a vida e o bem-estar de todos acima de tudo, e luta para fazer do mundo um lugar melhor. Sua determinação e bondade inspiram aqueles ao seu redor.",
+      "powers": [
+        "Empatia e compaixão",
+        "Liderança inspiradora",
+        "Coragem inabalável",
+        "Capacidade de unir pessoas"
+      ],
+      "weaknesses": [
+        "Pode ser ingênuo demais",
+        "Se preocupa tanto com os outros que esquece de si",
+        "Dificuldade em fazer escolhas difíceis",
+        "Vulnerável emocionalmente"
+      ]
+    },
+    "C": {
+      "title": "Anti-Herói",
+      "description": "Você é um Anti-Herói! Nem vilão nem herói tradicional, você segue seu próprio código moral. Geralmente tem boas intenções, mas não hesita em usar métodos questionáveis para alcançar seus objetivos. Você é complexo, imprevisível e frequentemente incompreendido. Sua abordagem pragmática te permite navegar nas áreas cinzentas da moralidade.",
+      "powers": [
+        "Adaptabilidade a qualquer situação",
+        "Pensamento não convencional",
+        "Habilidade de trabalhar sozinho",
+        "Determinação focada"
+      ],
+      "weaknesses": [
+        "Tendência ao isolamento",
+        "Problemas de confiança",
+        "Pode ser autodestrutivo",
+        "Lutas internas frequentes"
+      ]
+    },
+    "D": {
+      "title": "Vigilante",
+      "description": "Você é um Vigilante! Movido por um forte senso de justiça, você não confia no sistema para resolver os problemas. Prefere agir por conta própria, muitas vezes operando nas sombras e buscando justiça à sua maneira. Você é determinado, habilidoso e não tem medo de cruzar certas linhas quando necessário para garantir que a justiça seja feita.",
+      "powers": [
+        "Determinação inabalável",
+        "Preparação e planejamento meticuloso",
+        "Habilidades de combate e estratégia",
+        "Conhecimento das ruas e do submundo"
+      ],
+      "weaknesses": [
+        "Tendência à obsessão",
+        "Dificuldade em confiar nas autoridades",
+        "Pode ir longe demais em busca de justiça",
+        "Problemas em manter relacionamentos pessoais"
+      ]
+    }
+  },
+  "resultImages": {
+    "A": "assets/imgs/results/villain.jpg",
+    "B": "assets/imgs/results/hero.jpg",
+    "C": "assets/imgs/results/antihero.jpg",
+    "D": "assets/imgs/results/vigilante.jpg"
   }
 }
